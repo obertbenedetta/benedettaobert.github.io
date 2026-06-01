@@ -1,7 +1,3 @@
-index.html
-# benedettaobert.github.io
-title: Benedetta Obert Portfolio
-description: Bookmark this to keep an eye on my project updates!
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -4,31 +4,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Benedetta Obert — Senior Freelance PM · Global Events & Operations</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
- @media (max-width: 768px) {
-    nav {
-      padding: 0 20px;
-    }
-    nav .nav-links {
-      gap: 15px;
-    }
-    .hero {
-      padding: 80px 0 40px;
-    }
-    .hero-grid, 
-    .expertise-grid, 
-    .projects-grid {
-      grid-template-columns: 1fr !important;
-      gap: 40px;
-      padding: 0 24px;
-    }
-    .project-card.featured {
-      grid-template-columns: 1fr !important;
-      gap: 24px;
-    }
-    .hero-text {
-      margin-bottom: 32px;
-    }
-  }
   <style>
   :root {
     --navy: #1B2B4B;
@@ -94,7 +69,7 @@
   .hero-grid {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 80px; align-items: center;
-    max-width: 100%; margin: 0 auto; padding: 0 48px;
+    max-width: 1600px; margin: 0 auto; padding: 0 48px;
     width: 100%;
   }
   .hero-label {

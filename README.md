@@ -94,7 +94,7 @@
   .hero-grid {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 80px; align-items: center;
-    max-width: 1600px; margin: 0 auto; padding: 0 48px;
+    max-width: 100%; margin: 0 auto; padding: 0 48px;
     width: 100%;
   }
   .hero-label {

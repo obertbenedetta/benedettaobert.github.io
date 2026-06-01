@@ -132,7 +132,7 @@
 
   /* SECTION BASE */
   section { padding: 100px 0; }
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+  .container { max-width: 1600px; margin: 0 auto; padding: 0 48px; }
   .section-label {
     font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
     color: var(--gold); font-weight: 600; margin-bottom: 16px;
@@ -211,8 +211,37 @@
   }
   .proj-details { display: flex; flex-direction: column; gap: 20px; justify-content: center; }
   .proj-detail { border-left: 2px solid var(--gold); padding-left: 16px; }
-  .proj-detail-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); margin-bottom: 4px; }
+   .proj-detail-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); margin-bottom: 4px; }
   .proj-detail-val { font-size: 15px; font-weight: 500; color: var(--navy); line-height: 1.4; }
+  /* --- ADATTAMENTO MOBILE (SCHERMI PICCOLI) --- */
+  @media (max-width: 768px) {
+    nav {
+      padding: 0 20px;
+    }
+    nav .nav-links {
+      gap: 15px;
+    }
+    .hero {
+      padding: 80px 0 40px;
+    }
+    .hero-grid, 
+    .expertise-grid, 
+    .projects-grid {
+      grid-template-columns: 1fr !important;
+      gap: 40px;
+      padding: 0 24px;
+    }
+    .project-card.featured {
+      grid-template-columns: 1fr !important;
+      gap: 24px;
+    }
+    .hero-text {
+      margin-bottom: 32px;
+    }
+  }
+</style>
+</head>
+<body>
 
   /* BACKGROUND TIMELINE */
   #background { background: var(--white); }

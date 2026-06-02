@@ -213,37 +213,8 @@
   .proj-detail { border-left: 2px solid var(--gold); padding-left: 16px; }
    .proj-detail-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); margin-bottom: 4px; }
   .proj-detail-val { font-size: 15px; font-weight: 500; color: var(--navy); line-height: 1.4; }
-  /* --- ADATTAMENTO MOBILE (SCHERMI PICCOLI) --- */
-  @media (max-width: 768px) {
-    nav {
-      padding: 0 20px;
-    }
-    nav .nav-links {
-      gap: 15px;
-    }
-    .hero {
-      padding: 80px 0 40px;
-    }
-    .hero-grid, 
-    .expertise-grid, 
-    .projects-grid {
-      grid-template-columns: 1fr !important;
-      gap: 40px;
-      padding: 0 24px;
-    }
-    .project-card.featured {
-      grid-template-columns: 1fr !important;
-      gap: 24px;
-    }
-    .hero-text {
-      margin-bottom: 32px;
-    }
-  }
-</style>
-</head>
-<body>
-  
- /* BACKGROUND TIMELINE */
+
+  /* BACKGROUND TIMELINE */
   #background { background: var(--white); }
   .timeline { position: relative; padding-left: 32px; }
   .timeline::before {
@@ -268,6 +239,7 @@
   .tl-points li::before {
     content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 12px;
   }
+  
   /* ==========================================================================
      2. SKILLS & CAPABILITIES (Forzate 4 colonne pulite)
      ========================================================================== */

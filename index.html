@@ -132,7 +132,7 @@
 
   /* SECTION BASE */
   section { padding: 100px 0; }
-  .container { max-width: 1600px; margin: 0 auto; padding: 0 48px; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
   .section-label {
     font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
     color: var(--gold); font-weight: 600; margin-bottom: 16px;
@@ -211,7 +211,7 @@
   }
   .proj-details { display: flex; flex-direction: column; gap: 20px; justify-content: center; }
   .proj-detail { border-left: 2px solid var(--gold); padding-left: 16px; }
-   .proj-detail-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); margin-bottom: 4px; }
+  .proj-detail-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); margin-bottom: 4px; }
   .proj-detail-val { font-size: 15px; font-weight: 500; color: var(--navy); line-height: 1.4; }
 
   /* BACKGROUND TIMELINE */
@@ -239,16 +239,12 @@
   .tl-points li::before {
     content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 12px;
   }
-  
-  /* ==========================================================================
-     2. SKILLS & CAPABILITIES (Forzate 4 colonne pulite)
-     ========================================================================== */
+
+  /* SKILLS */
   #skills { background: var(--navy); }
-  #skills .container { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
   #skills .section-title { color: var(--white); }
-  
-  .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 40px; }
-  .skill-block { width: 100%; }
+  .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .skill-block { }
   .skill-category {
     font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
     color: var(--gold); font-weight: 600; margin-bottom: 16px;
@@ -258,15 +254,11 @@
   .skill-list li { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.4; padding-left: 12px; position: relative; }
   .skill-list li::before { content: '·'; position: absolute; left: 0; color: var(--gold); }
 
-  /* ==========================================================================
-     3. CONTACT & AVAILABILITY (Riquadro blu e icone allineate)
-     ========================================================================== */
+  /* CONTACT */
   #contact { background: var(--cream); }
-  #contact .container { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
-  
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 40px; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
   .contact-text { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 40px; }
-  .contact-items { display: flex; flex-direction: column; gap: 24px; }
+  .contact-items { display: flex; flex-direction: column; gap: 20px; }
   .contact-item { display: flex; align-items: center; gap: 16px; }
   .contact-icon {
     width: 44px; height: 44px; background: var(--navy);
@@ -275,16 +267,22 @@
   .contact-icon svg { width: 18px; height: 18px; color: var(--gold); fill: currentColor; }
   .contact-info { font-size: 15px; color: var(--text); font-weight: 500; }
   .contact-info small { display: block; font-size: 12px; color: var(--grey); font-weight: 400; margin-top: 2px; }
-  
-  .avail-box { background: var(--navy); padding: 40px; }
+  .avail-box {
+    background: var(--navy); padding: 40px;
+  }
   .avail-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 32px; font-weight: 300; color: var(--white); margin-bottom: 24px; line-height: 1.2;
   }
   .avail-title em { font-style: italic; color: var(--gold-light); }
   .avail-types { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
-  .avail-type { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.8); }
-  .avail-type::before { content: ''; width: 20px; height: 1px; background: var(--gold); flex-shrink: 0; }
+  .avail-type {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 14px; color: rgba(255,255,255,0.8);
+  }
+  .avail-type::before {
+    content: ''; width: 20px; height: 1px; background: var(--gold); flex-shrink: 0;
+  }
   .avail-cta {
     display: inline-flex; align-items: center; gap: 10px;
     background: var(--gold); color: var(--navy);
@@ -294,36 +292,381 @@
   }
   .avail-cta:hover { background: var(--gold-light); }
 
-  /* ==========================================================================
-     4. ADATTAMENTO MOBILE AUTOMATICO (Responsive Media Queries)
-     ========================================================================== */
-  @media (max-width: 768px) {
-    #background .container, #skills .container, #contact .container {
-      padding: 0 24px; /* Riduce i margini laterali vuoti sui telefoni */
-    }
-    .timeline { padding-left: 20px; }
-    .tl-item::before { left: -25px; } /* Ri-allinea il pallino sulla sinistra sul mobile */
-    .tl-role { font-size: 18px; }
-    
-    .skills-grid { 
-      grid-template-columns: 1fr !important; /* Incolonna le skill in verticale */
-      gap: 32px; 
-    }
-    
-    .contact-grid { 
-      grid-template-columns: 1fr !important; /* Mette il box blu sotto il testo dei contatti */
-      gap: 48px; 
-    }
-    .avail-box { padding: 24px; }
-    .avail-title { font-size: 26px; }
+  /* FOOTER */
+  footer {
+    background: var(--navy); padding: 32px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid rgba(201,151,58,0.2);
   }
+  footer .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; color: var(--white); font-weight: 400;
+  }
+  footer .logo span { color: var(--gold); }
+  footer p { font-size: 13px; color: rgba(255,255,255,0.4); }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .hero-grid, .projects-grid, .contact-grid, .skills-grid { grid-template-columns: 1fr; }
+    .project-card.featured { grid-column: 1; display: block; }
+    .expertise-grid { grid-template-columns: 1fr 1fr; }
+    .container { padding: 0 24px; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">B.<span>Obert</span></div>
+  <div class="nav-links">
+    <a href="#expertise">Expertise</a>
+    <a href="#projects">Projects</a>
+    <a href="#background">Background</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-label">Available for Freelance Mandates</div>
+      <h1>Benedetta<br/><em>Obert</em></h1>
+      <div class="hero-title">Senior Freelance Project Manager ·&nbsp;<br/>
+      Global Events &amp; Operations Consultant</div>
+      <p class="hero-text">
+        Complex projects. Multiple stakeholders. Zero room for failure.<br/>
+        <br/>
+        I help brands, agencies, and international organizations deliver large-scale events, market launches, operational programs, and transformation initiatives. From strategic planning to on-site execution.
+      </p>
+      <a href="#contact" class="hero-cta">
+        Let's Work Together
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="hero-right">
+      <div class="stat-card">
+        <div class="stat-num">7+</div>
+        <div class="stat-label">Years leading and delivering complex international programs</div>
+      </div>
+       <div class="stat-card">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Industries mastered: Events & Sponsorship· Luxury · Publishing & Media · FMCG · Payments</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">2026</div>
+        <div class="stat-label">Recent project, lasting impact<br/> Olympic & Paralympic Winter Games Milano Cortina — Visa’s Global Sponsorship Team</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="container">
+    <div class="section-label">What I Do</div>
+    <div class="section-title">Areas of <em>Expertise</em></div>
+    <div class="expertise-grid">
+      <div class="exp-card">
+        <div class="exp-icon">🎯</div>
+        <div class="exp-title">Event & Sponsorship Operations</div>
+        <div class="exp-text">End-to-end program management of large-scale international events (sport and high-profile business), brand experiences and sponsorship programs. From strategic planning and venue readiness to live operations and post-event execution.</div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">🏪</div>
+        <div class="exp-title">Brand Activations & Retail Expansion</div>
+        <div class="exp-text">Strategy and execution for new market launches, retail openings, in-store activations, local partnesrhips, B2B events, OOH, and integrated campigns.</div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">🌍</div>
+        <div class="exp-title">Multi-Stakeholder Coordination</div>
+        <div class="exp-text">The bridge between clients, agencies, creative teams, suppliers, local partners, and global HQs — clear briefs, no silos, zero dropped balls.</div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">⚙️</div>
+        <div class="exp-title">Operations & Supply Chain</div>
+        <div class="exp-text">Deep expertise in supply chain, demand forecasting, inventory management, logiscs and distribution — built within multinational environments including FMCG industry in roles at Lavazza and Nestlé across European markets.</div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">💻</div>
+        <div class="exp-title">Digital Transformation</div>
+        <div class="exp-text">Support organizations in turning fragmented systems and workflows into integrated, scalable operating models. Lead cross-functional digital transformation programs across CRM, ERP, BI, marketing automation, editorial, and e-commerce ecosystems bridging business and technology.</div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">📋</div>
+        <div class="exp-title">Agile Program Delivery</div>
+        <div class="exp-text">Certified Scrum Master & Product Owner. Structured delivery in ambiguous, fast-moving environments — on scope, on time, on budget.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label">Selected Work</div>
+    <div class="section-title">Key <em>Projects</em></div>
+    <div class="projects-grid">
+
+      <!-- FEATURED -->
+      <div class="project-card featured">
+        <div>
+          <div class="proj-label">🏅 Winter Olympic & Paralympic Games · 2025-26 </div>
+          <div class="proj-title">Visa Sponsorships & Payment Operations — Milano Cortina 2026</div>
+          <div class="proj-text">
+            Senior Operations Project Manager within Visa’s Global Sponsorship Team, delivering payment infrastructure and operational readiness across Olympic and Paralympic venues. Orchestrated multi-stakeholder execution from planning to Games-time operations and decommissioning, enabling seamless payment experiences, effective brand activation, and frictionless fan journeys in one of the world’s most complex live-event environments.
+          </div>
+          <div class="proj-tags">
+            <span class="proj-tag">Event Operations</span>
+            <span class="proj-tag">Payments Infrastructure</span>
+            <span class="proj-tag">Retail Management</span>
+            <span class="proj-tag">Stakeholder Coordination</span>
+            <span class="proj-tag">Multi-venue Logistics</span>
+            <span class="proj-tag">Live Operations</span>
+          </div><br/>
+        </div>
+        <div class="proj-details">
+          <div class="proj-detail">
+            <div class="proj-detail-label">Scale</div>
+            <div class="proj-detail-val">Multiple spread venues across Northern Italy</div>
+          </div>
+          <div class="proj-detail">
+            <div class="proj-detail-label">Stakeholders</div>
+            <div class="proj-detail-val">Visa Global, IOC, OCOG, local acquiring banks, retail partners, logistics suppliers and marketing agencies</div>
+          </div>
+          <div class="proj-detail">
+            <div class="proj-detail-label">Scope</div>
+            <div class="proj-detail-val">Payment acceptance · Retail operations · Venue readiness · Brand presence · Fan experience · Operational delivery</div>
+          </div>
+          <div class="proj-detail">
+            <div class="proj-detail-label">Environment</div>
+            <div class="proj-detail-val">Fixed deadline · Live venue operations & events · Zero-downtime requirement</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="project-card">
+        <div class="proj-label">🌟 Brand Experience, Activation & Market Expansion Strategy · 2025–Present</div>
+        <div class="proj-title">International Premium Brand Activations & Market Expansion — EU / UAE</div>
+        <div class="proj-text">
+          Collaborating as freelance Senior Project Manager with international media and event partners to support premium brands in expansion and activation projects across new markets. Store openings, in-store activations, B2B launch events, PR and influencer strategy, OOH and media activities, local partnerships with hospitality and lifestyle brands including hotels, gyms, and cafés. Single point of contact between clients, production and media agencies, creative teams and local stakeholders — coordinating all project phases from strategic planning to execution.
+        </div>
+        <div class="proj-tags">
+          <span class="proj-tag">Retail Expansion</span>
+          <span class="proj-tag">Brand Launch</span>
+          <span class="proj-tag">B2B Events</span>
+          <span class="proj-tag">Integrated Campaign Coordination</span>
+          <span class="proj-tag">Market Entry</span>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="project-card">
+        <div class="proj-label">📱 Operations & Digital Transformation · 2022–2025</div>
+        <div class="proj-title">Hearst Italia — Full Digital and Operational Redesign</div>
+        <div class="proj-text">
+          Led cross-functional digital and organizational transformation initiatives, redesigning processes and coordinating technology implementation across marketing, editorial, sales, finance, and events teams: Salesforce CRM & Marketing Cloud, Zucchetti ERP, WoodWing editorial platform, Magento e-commerce, and integrated operational workflows. Also coordinated logistics for fashion productions and supported the launch of the French subsidiary. Coordinated 15+ vendors, agencies, and technology partners over a multi-year transformation roadmap.
+        </div>
+        <div class="proj-tags">
+          <span class="proj-tag">Smart Operations</span>
+          <span class="proj-tag">CRM & Marketing Automation</span>
+          <span class="proj-tag">E-commerce</span>
+          <span class="proj-tag">Change Management</span>
+          <span class="proj-tag">Vendor Management</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BACKGROUND -->
+<section id="background">
+  <div class="container">
+    <div class="section-label">Experience</div>
+    <div class="section-title">Professional <em>Background</em></div>
+    <div class="timeline">
+
+   <div class="tl-item">
+        <div class="tl-date">2025 – Present</div>
+        <div class="tl-role">Freelance Head of Project Management</div>
+        <div class="tl-company">International Brand Activations, Events & Market Expansion · Freelance</div>
+        <ul class="tl-points">
+          <li>Supporting agencies and premium brands in the planning and execution of events, retail activations, store openings, and market-entry initiatives</li>
+          <li>Brand Activations, Retail Expansion, B2B & Consumer Events, Partnership Development</li>
+          <li>Multi-stakeholder coordination across clients, agencies, production teams, and local partners</li>
+          <li>From strategy and client briefing to on-the-ground execution</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">2025 – Apr 2026</div>
+        <div class="tl-role">Senior Acceptance Project Manager — Olympic & Paralympic Winter Games</div>
+        <div class="tl-company">Visa · Global Sponsorship Team · Freelance</div>
+        <ul class="tl-points">
+          <li>End-to-end payment acceptance operations across all Milano Cortina 2026 venues</li>
+          <li>Payment Operations (POS/ATM deployment), Retail & Merchant Ecosystem, Fan Experience</li>
+          <li>Multi-stakeholder coordination</li>
+          <li>Games-time escalation point for real-time operational decisions</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">2022 – 2025</div>
+        <div class="tl-role">Head of Project Management & Digital Transformation</div>
+        <div class="tl-company">Hearst Italia (Hearst Corporation) · Full-time</div>
+        <ul class="tl-points">
+          <li>Salesforce CRM, Marketing Cloud, Magento membership & e-commerce, centralised BI platform built from scratch — full lifecycle PM</li>
+          <li>Operations: French subsidiary launch including location scouting, Luxury fashion shoot and production logistics</li>
+          <li>15+ agencies and vendors coordinated</li>
+          <li>Change management across marketing, editorial, events, sales, and finance</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">2021 – 2022</div>
+        <div class="tl-role">Project Manager — Operations & Supply Chain</div>
+        <div class="tl-company">Nestlé · Confectionery Business</div>
+        <ul class="tl-points">
+          <li>Demand forecasting accuracy improvements and inventory optimisation across European markets</li>
+          <li>Cross-functional projects coordinating supply, planning, and sales teams</li>
+          <li>Standardised processes across international markets</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">2020 – 2021</div>
+        <div class="tl-role">Distribution & Supply Planner — Logistics & Supply Chain</div>
+        <div class="tl-company">Lavazza Group · France & Italy</div>
+        <ul class="tl-points">
+          <li>End-to-end distribution and logistics across France and Italy</li>
+          <li>Demand forecasting, stock planning and inventory level optimisation, transport efficiency</li>
+          <li>Distribution and logistics system implementation projects</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Capabilities</div>
+    <div class="section-title">Skills &amp; <em>Tools</em></div>
+    <div class="skills-grid">
+      <div class="skill-block">
+        <div class="skill-category">Project Delivery</div>
+        <ul class="skill-list">
+          <li>Event & Sponsorship Operations</li>
+          <li>Retail & Brand Activation</li>
+          <li>Program & Portfolio Management</li>
+          <li>Agile (Scrum / Kanban)</li>
+          <li>Budget & Cost Management</li>
+          <li>Risk & Issue Management</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <div class="skill-category">Operations & Logistics</div>
+        <ul class="skill-list">
+          <li>Supply Chain & Logistics</li>
+          <li>Demand Forecasting</li>
+          <li>Inventory Optimisation</li>
+          <li>Vendor & Supplier Management</li>
+          <li>Contract Negotiation</li>
+          <li>Procurement</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <div class="skill-category">Digital & Platforms</div>
+        <ul class="skill-list">
+          <li>Salesforce CRM & Marketing Cloud</li>
+          <li>Zucchetti ERP</li>
+          <li>Magento / Shopify</li>
+          <li>Woodwing Studio</li>
+          <li>PowerBI / QlikView</li>
+          <li>Adobe Suite</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <div class="skill-category">Languages & Credentials</div>
+        <ul class="skill-list">
+          <li>Italian — Native</li>
+          <li>English — Proficient</li>
+          <li>Spanish — Intermediate</li>
+          <li>French — Basic (in progress)</li>
+          <li>Scrum Master & Product Owner</li>
+          <li>Executive Programme — Digital Transformation (PoliMi)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Get In Touch</div>
+    <div class="section-title">Let's Build Something <em>Exceptional</em></div>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-text">
+          I partner with agencies, brands, and organisations that need a senior lead who can move between strategy and execution — and make it look seamless. Based in Milan, available for mandates across Europe, the Middle East and globally.
+        </p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div class="contact-info">
+              obert.benedetta@gmail.com
+              <small>Email — preferred for project enquiries</small>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            <div class="contact-info">
+              +39 334 810 3387
+              <small>Phone / WhatsApp</small>
+            </div>
+          </div>
+            
+        
+
+
+        </div>
+      </div>
+      <div>
+        <div class="avail-box">
+          <div class="avail-title">Currently open to <em>new mandates</em></div>
+          <div class="avail-types">
+            <div class="avail-type">Event & Sponsorship Operations PM</div>
+            <div class="avail-type">Brand Activation & Market Entry Lead</div>
+            <div class="avail-type">Senior Project Consultant — Global Programs</div>
+            <div class="avail-type">Digital Transformation Project Lead</div>
+            <div class="avail-type">Retail & Operations Program Manager</div>
+          </div>
+          <a href="mailto:obert.benedetta@gmail.com" class="avail-cta">
+            Send a Brief
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-container">
-    <div class="logo">Benedetta <span>Obert</span></div>
-    <p>Senior Freelance Project Manager · Global Events & Operations Consultant · Milan, Italy</p>
-  </div>
+  <div class="logo">Benedetta <span>Obert</span></div>
+  <p>Senior Freelance Project Manager · Global Events & Operations Consultant · Milan, Italy</p>
 </footer>
 
 </body>

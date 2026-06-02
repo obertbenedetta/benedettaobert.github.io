@@ -242,80 +242,50 @@
 </style>
 </head>
 <body>
-<!-- BACKGROUND -->
-<section id="background">
-  <div class="container">
-    <div class="section-label">Experience</div>
-    <div class="section-title">Professional <em>Background</em></div>
-    <div class="timeline">
+  /* ==========================================================================
+     1. BACKGROUND TIMELINE (Sistemata con linea e pallini allineati)
+     ========================================================================== */
+  #background { background: var(--white); }
+  
+  /* Contenitore interno della Timeline per centrarla */
+  #background .container { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+  
+  .timeline { position: relative; padding-left: 32px; margin-top: 40px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 8px; bottom: 0;
+    width: 1px; background: linear-gradient(to bottom, var(--gold), rgba(201,151,58,0.1));
+  }
+  .tl-item { position: relative; margin-bottom: 56px; }
+  
+  /* I pallini dorati sulla linea sinistra */
+  .tl-item::before {
+    content: ''; position: absolute; left: -37px; top: 6px;
+    width: 10px; height: 10px;
+    background: var(--gold); border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--white), 0 0 0 5px var(--gold);
+    z-index: 2;
+  }
+  .tl-date { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; font-weight: 600; }
+  .tl-role { font-size: 20px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .tl-company { font-size: 14px; color: var(--grey); margin-bottom: 16px; }
+  .tl-points { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .tl-points li {
+    font-size: 14px; color: #4B5563; line-height: 1.65;
+    padding-left: 16px; position: relative;
+  }
+  .tl-points li::before {
+    content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 12px;
+  }
 
-      <div class="tl-item">
-        <div class="tl-date">2025 – Present</div>
-        <div class="tl-role">Freelance Head of Project Management</div>
-        <div class="tl-company">International Brand Activations, Events & Market Expansion · Freelance</div>
-        <ul class="tl-points">
-          <li>Supporting agencies and premium brands in the planning and execution of events, retail activations, store openings, and market-entry initiatives</li>
-          <li>Brand Activations, Retail Expansion, B2B & Consumer Events, Partnership Development</li>
-          <li>Multi-stakeholder coordination across clients, agencies, production teams, and local partners</li>
-          <li>From strategy and client briefing to on-the-ground execution</li>
-        </ul>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-date">2025 – Apr 2026</div>
-        <div class="tl-role">Senior Acceptance Project Manager — Olympic & Paralympic Winter Games</div>
-        <div class="tl-company">Visa · Global Sponsorship Team · Freelance</div>
-        <ul class="tl-points">
-          <li>End-to-end payment acceptance operations across all Milano Cortina 2026 venues</li>
-          <li>Payment Operations (POS/ATM deployment), Retail & Merchant Ecosystem, Fan Experience</li>
-          <li>Multi-stakeholder coordination</li>
-          <li>Games-time escalation point for real-time operational decisions</li>
-        </ul>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-date">2022 – 2025</div>
-        <div class="tl-role">Head of Project Management & Digital Transformation</div>
-        <div class="tl-company">Hearst Italia (Hearst Corporation) · Full-time</div>
-        <ul class="tl-points">
-          <li>Salesforce CRM, Marketing Cloud, Magento membership & e-commerce, centralised BI platform built from scratch — full lifecycle PM</li>
-          <li>Operations: French subsidiary launch including location scouting, Luxury fashion shoot and production logistics</li>
-          <li>15+ agencies and vendors coordinated</li>
-          <li>Change management across marketing, editorial, events, sales, and finance</li>
-        </ul>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-date">2021 – 2022</div>
-        <div class="tl-role">Project Manager — Operations & Supply Chain</div>
-        <div class="tl-company">Nestlé · Confectionery Business</div>
-        <ul class="tl-points">
-          <li>Demand forecasting accuracy improvements and inventory optimisation across European markets</li>
-          <li>Cross-functional projects coordinating supply, planning, and sales teams</li>
-          <li>Standardised processes across international markets</li>
-        </ul>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-date">2020 – 2021</div>
-        <div class="tl-role">Distribution & Supply Planner — Logistics & Supply Chain</div>
-        <div class="tl-company">Lavazza Group · France & Italy</div>
-        <ul class="tl-points">
-          <li>End-to-end distribution and logistics across France and Italy</li>
-          <li>Demand forecasting, stock planning and inventory level optimisation, transport efficiency</li>
-          <li>Distribution and logistics system implementation projects</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
- /* SKILLS */
+  /* ==========================================================================
+     2. SKILLS & CAPABILITIES (Forzate 4 colonne pulite)
+     ========================================================================== */
   #skills { background: var(--navy); }
+  #skills .container { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
   #skills .section-title { color: var(--white); }
-  .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-  .skill-block { }
+  
+  .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 40px; }
+  .skill-block { width: 100%; }
   .skill-category {
     font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
     color: var(--gold); font-weight: 600; margin-bottom: 16px;
@@ -325,18 +295,15 @@
   .skill-list li { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.4; padding-left: 12px; position: relative; }
   .skill-list li::before { content: '·'; position: absolute; left: 0; color: var(--gold); }
 
-  /* ADATTAMENTO MOBILE PER SKILLS */
-  @media (max-width: 768px) {
-    .skills-grid { 
-      grid-template-columns: 1fr !important; /* Trasforma le 4 colonne in 1 colonna singola su smartphone */
-      gap: 32px; 
-    }
-  }
-  /* CONTACT */
+  /* ==========================================================================
+     3. CONTACT & AVAILABILITY (Riquadro blu e icone allineate)
+     ========================================================================== */
   #contact { background: var(--cream); }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  #contact .container { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+  
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 40px; }
   .contact-text { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 40px; }
-  .contact-items { display: flex; flex-direction: column; gap: 20px; }
+  .contact-items { display: flex; flex-direction: column; gap: 24px; }
   .contact-item { display: flex; align-items: center; gap: 16px; }
   .contact-icon {
     width: 44px; height: 44px; background: var(--navy);
@@ -345,22 +312,16 @@
   .contact-icon svg { width: 18px; height: 18px; color: var(--gold); fill: currentColor; }
   .contact-info { font-size: 15px; color: var(--text); font-weight: 500; }
   .contact-info small { display: block; font-size: 12px; color: var(--grey); font-weight: 400; margin-top: 2px; }
-  .avail-box {
-    background: var(--navy); padding: 40px;
-  }
+  
+  .avail-box { background: var(--navy); padding: 40px; }
   .avail-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 32px; font-weight: 300; color: var(--white); margin-bottom: 24px; line-height: 1.2;
   }
   .avail-title em { font-style: italic; color: var(--gold-light); }
   .avail-types { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
-  .avail-type {
-    display: flex; align-items: center; gap: 12px;
-    font-size: 14px; color: rgba(255,255,255,0.8);
-  }
-  .avail-type::before {
-    content: ''; width: 20px; height: 1px; background: var(--gold); flex-shrink: 0;
-  }
+  .avail-type { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.8); }
+  .avail-type::before { content: ''; width: 20px; height: 1px; background: var(--gold); flex-shrink: 0; }
   .avail-cta {
     display: inline-flex; align-items: center; gap: 10px;
     background: var(--gold); color: var(--navy);
@@ -370,16 +331,30 @@
   }
   .avail-cta:hover { background: var(--gold-light); }
 
-  /* ADATTAMENTO MOBILE PER CONTACT */
+  /* ==========================================================================
+     4. ADATTAMENTO MOBILE AUTOMATICO (Responsive Media Queries)
+     ========================================================================== */
   @media (max-width: 768px) {
+    #background .container, #skills .container, #contact .container {
+      padding: 0 24px; /* Riduce i margini laterali vuoti sui telefoni */
+    }
+    .timeline { padding-left: 20px; }
+    .tl-item::before { left: -25px; } /* Ri-allinea il pallino sulla sinistra sul mobile */
+    .tl-role { font-size: 18px; }
+    
+    .skills-grid { 
+      grid-template-columns: 1fr !important; /* Incolonna le skill in verticale */
+      gap: 32px; 
+    }
+    
     .contact-grid { 
-      grid-template-columns: 1fr !important; /* Incolonna il testo e il riquadro blu verticalmente su smartphone */
-      gap: 40px; 
+      grid-template-columns: 1fr !important; /* Mette il box blu sotto il testo dei contatti */
+      gap: 48px; 
     }
-    .avail-box {
-      padding: 24px; /* Riduce leggermente i margini del box blu per non stringere troppo i testi sui telefoni */
-    }
+    .avail-box { padding: 24px; }
+    .avail-title { font-size: 26px; }
   }
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-container">

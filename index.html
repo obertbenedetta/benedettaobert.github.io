@@ -315,7 +315,7 @@
     .nav-links { display: none; }
   }
 @media (max-width: 768px) {
-  /* ALLINEA LOGO A SINISTRA E LINK A DESTRA SULLA STESSA RIGA */
+  /* FORZA LA BARRA A RIMANERE FISSA IN CIMA ALLA PAGINA */
   nav {
     display: flex !important;
     flex-direction: row !important;
@@ -324,18 +324,29 @@
     gap: 16px !important;
     padding: 15px 20px !important;
     width: 100% !important;
-    position: relative !important;
-    z-index: 9999 !important;
-    background: #1B2B4B !important; /* Mantiene lo sfondo blu per garantire il contrasto */
+    
+    /* Regole per il bloccaggio in alto */
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 99999 !important; /* Valore altissimo per stare sopra a tutto durante lo scroll */
+    background: #1B2B4B !important; /* Sfondo scuro che copre i contenuti sottostanti mentre scorri */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important; /* Sottile ombra per staccare la barra dai contenuti */
     overflow: hidden !important;
   }
 
-  /* BLOCCHETTO LOGO FISSO A SINISTRA */
+  /* COMPENSAZIONE SPAZIO: Impedisce alla barra fissa di coprire l'inizio della pagina */
+  body {
+    padding-top: 70px !important; /* Spinge giù i contenuti di quel tanto che basta per liberare la nav */
+  }
+
+  /* LOGO FISSO A SINISTRA */
   nav .logo {
     color: #FFFFFF !important;
     font-size: 18px !important;
     font-weight: bold !important;
-    flex-shrink: 0 !important; /* Impedisce al logo di rimpicciolirsi */
+    flex-shrink: 0 !important;
     display: block !important;
     visibility: visible !important;
     white-space: nowrap !important;
@@ -344,39 +355,38 @@
     color: #E8C97A !important;
   }
 
-  /* BINARIO DI SCORRIMENTO FLUIDO AFFIANCATO SULLA DESTRA */
+  /* BINARIO DI SCORRIMENTO A DESTRA */
   .nav-links {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important; /* Impedisce categoricamente di andare a capo */
+    flex-wrap: nowrap !important;
     justify-content: flex-start !important;
+    flex-grow: 1 !important;
     
-    flex-grow: 1 !important; /* Occupa tutto lo spazio rimasto a destra del logo */
-    overflow-x: auto !important; /* Attiva lo scorrimento orizzontale con il dito */
+    overflow-x: auto !important;
     overflow-y: hidden !important;
-    -webkit-overflow-scrolling: touch; /* Massima fluidità su iOS */
+    -webkit-overflow-scrolling: touch;
     
-    /* Spazio interno e distanza tra le parole */
     padding: 4px 10px !important;
     gap: 20px !important; 
     box-sizing: border-box !important;
   }
 
-  /* NASCONDE LA BARRA DI SCORRIMENTO ANTIESTETICA */
+  /* NASCONDE LA BARRA DI SCORRIMENTO */
   .nav-links::-webkit-scrollbar { display: none !important; width: 0 !important; height: 0 !important; }
   .nav-links { -ms-overflow-style: none !important; scrollbar-width: none !important; }
 
-  /* PROTEZIONE TOTALE DEI LINK PER EVITARE TAGLI O SPARIZIONI */
+  /* LINK INTERI ED ELEGANTI */
   .nav-links a, 
   .nav-links a:link, 
   .nav-links a:visited, 
   .nav-links a:hover, 
   .nav-links a:active {
-    flex: 0 0 auto !important; /* REGOLA CHIAVE: Impedisce di schiacciare o troncare le parole */
-    white-space: nowrap !important; /* Impedisce a parole lunghe come 'Background' di spezzarsi */
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
     font-size: 14.5px !important;
     font-weight: 500 !important;
-    color: #FFFFFF !important; /* Testo bianco ben visibile */
+    color: #FFFFFF !important;
     text-decoration: none !important;
     opacity: 1 !important;
     visibility: visible !important;

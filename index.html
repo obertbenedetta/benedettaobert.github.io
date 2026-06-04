@@ -314,31 +314,49 @@
     footer { flex-direction: column; gap: 12px; text-align: center; }
     .nav-links { display: none; }
   }
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
   nav {
+    display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 12px !important;
-    padding: 15px !important;
+    gap: 8px !important;
+    padding: 12px 0 !important; /* Rimosso il padding laterale per far toccare il binario ai bordi dello schermo */
+    width: 100% !important;
+    overflow: hidden !important; /* Blocca il logo e costringe solo i link a scorrere */
   }
+
   .nav-links {
     display: flex !important;
-    flex-wrap: nowrap !important; /* Forza i link sulla stessa riga */
-    justify-content: flex-start !important; /* Allinea a sinistra per lo scorrimento */
+    flex-direction: row !important; /* Forza i link in linea retta */
+    flex-wrap: nowrap !important; /* Vieta categoricamente di andare a capo */
+    justify-content: flex-start !important; /* Inizia sempre dall'estrema sinistra */
+    
     width: 100% !important;
-    overflow-x: auto !important; /* Attiva lo scorrimento orizzontale */
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /* Rende lo scorrimento fluido su iPhone */
-    padding: 10px 20px !important;
-    gap: 20px !important; /* Crea spazio sicuro per il clic con il dito */
+    max-width: 100% !important;
+    
+    /* ATTIVAZIONE BINARIO FLUIDO */
+    overflow-x: auto !important; 
+    overflow-y: hidden !important; /* Blocca scivolamenti verticali strani */
+    -webkit-overflow-scrolling: touch; /* Fluidità massima su iPhone */
+    
+    /* DISTRIBUZIONE SPAZI (Aggiunti 20px di cuscinetto ai lati per non far scomparire i testi) */
+    padding: 10px 20px !important; 
+    gap: 24px !important; /* Distanza generosa tra le parole per il tocco del dito */
+    
+    /* EFFETTO VISIVO */
+    scroll-snap-type: x mandatory; /* Fa agganciare le parole in modo netto durante lo scroll */
   }
-  /* Nasconde la barra di scorrimento brutta visivamente su Chrome/Safari/Firefox */
-  .nav-links::-webkit-scrollbar { display: none; }
-  .nav-links { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Nasconde la barra di scorrimento su tutti i browser */
+  .nav-links::-webkit-scrollbar { display: none !important; }
+  .nav-links { -ms-overflow-style: none !important; scrollbar-width: none !important; }
   
   .nav-links a {
-    white-space: nowrap !important; /* Impedisce alle parole di andare a capo */
-    font-size: 15px !important; /* Ingrandisce leggermente i link per il touch */
+    flex: 0 0 auto !important; /* Impedisce al browser di rimpicciolire o deformare le parole */
+    white-space: nowrap !important; /* Evita che parole lunghe come Background si spezzino */
+    font-size: 15px !important;
+    padding: 4px 2px !important;
+    scroll-snap-align: start; /* Allinea la parola all'inizio dello schermo quando si scorre */
   }
 }
 </style>

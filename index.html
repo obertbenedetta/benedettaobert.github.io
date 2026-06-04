@@ -314,6 +314,33 @@
     footer { flex-direction: column; gap: 12px; text-align: center; }
     .nav-links { display: none; }
   }
+  @media (max-width: 768px) {
+  nav {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 15px !important;
+  }
+  .nav-links {
+    display: flex !important;
+    flex-wrap: nowrap !important; /* Forza i link sulla stessa riga */
+    justify-content: flex-start !important; /* Allinea a sinistra per lo scorrimento */
+    width: 100% !important;
+    overflow-x: auto !important; /* Attiva lo scorrimento orizzontale */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Rende lo scorrimento fluido su iPhone */
+    padding: 10px 20px !important;
+    gap: 20px !important; /* Crea spazio sicuro per il clic con il dito */
+  }
+  /* Nasconde la barra di scorrimento brutta visivamente su Chrome/Safari/Firefox */
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links { -ms-overflow-style: none; scrollbar-width: none; }
+  
+  .nav-links a {
+    white-space: nowrap !important; /* Impedisce alle parole di andare a capo */
+    font-size: 15px !important; /* Ingrandisce leggermente i link per il touch */
+  }
+}
 </style>
 </head>
 <body>

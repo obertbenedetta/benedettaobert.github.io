@@ -687,13 +687,15 @@
     </div>
   </div>
 </section>
-<!-- INIZIO SEZIONE CONTACT RIPRISTINATA (CON ID DI ATTERRAGGIO) -->
+<!-- INIZIO SEZIONE CONTACT COMPLETA E PROTETTA -->
 <section id="contact" style="padding: 80px 0; background: var(--cream, #FAF8F4);">
   <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
     <div class="section-label" style="font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold, #C9973A); font-weight: 600; margin-bottom: 12px;">Get In Touch</div>
     <div class="section-title" style="font-family: 'Cormorant Garamond', serif; font-size: 38px; color: var(--navy, #1B2B4B); font-weight: 400; margin-bottom: 32px; line-height: 1.2;">Let's Build Something <em style="font-style: italic; color: var(--gold, #C9973A);">Exceptional</em></div>
     
     <div class="contact-grid" style="display: grid; grid-template-columns: 1fr; gap: 32px;">
+      
+      <!-- COLONNA SINISTRA: PULSANTI DI CONTATTO -->
       <div>
         <p class="contact-text" style="font-size: 16px; color: #4B5563; line-height: 1.6; margin-bottom: 32px; max-width: 600px;">
           I partner with agencies, brands, and organisations that need a senior lead who can move between strategy and execution — and make it look seamless. Based in Milan, available for mandates across Europe, the Middle East and globally.
@@ -701,33 +703,32 @@
         
         <div class="contact-items" style="display: flex; flex-direction: column; gap: 20px;">
 
-          
-          <!-- EMAIL CLICCABILE CON APERTURA DIRETTA -->
-          <a href="mailto:obert.benedetta@gmail.com" class="contact-item" style="text-decoration: none; color: inherit; display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+          <!-- PULSANTE EMAIL PROTETTO -->
+          <a href="#" id="secure-email-btn" class="contact-item" style="text-decoration: none; color: inherit; display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
             <div class="contact-icon">
-              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: var(--gold, #C9973A);"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             </div>
             <div class="contact-info">
-              <strong style="display: block; color: var(--navy);">obert.benedetta@gmail.com</strong>
-              <small style="display: block; color: #4B5563;">Email — Tap to send project enquiry</small>
+              <strong style="display: block; color: var(--navy, #1B2B4B); font-size: 16px;">Send an Email Enquiry</strong>
+              <small style="display: block; color: #4B5563; margin-top: 4px;">Tap to open your mail client</small>
             </div>
           </a>
 
-          <!-- TELEFONO/WHATSAPP CLICCABILE CON APERTURA DIRETTA IN APP -->
-          <a href="whatsapp://send?phone=393348103387" class="contact-item" style="text-decoration: none; color: inherit; display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+          <!-- PULSANTE WHATSAPP PROTETTO -->
+          <a href="#" id="secure-phone-btn" class="contact-item" style="text-decoration: none; color: inherit; display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
             <div class="contact-icon">
-              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: var(--gold, #C9973A);"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             </div>
             <div class="contact-info">
-              <strong style="display: block; color: var(--navy);">+39 334 810 3387</strong>
-              <small style="display: block; color: #4B5563;">Phone / WhatsApp — Tap to message</small>
+              <strong style="display: block; color: var(--navy, #1B2B4B); font-size: 16px;">Connect via Phone / WhatsApp</strong>
+              <small style="display: block; color: #4B5563; margin-top: 4px;">Tap to start a direct chat</small>
             </div>
           </a>
 
         </div> <!-- Fine contact-items -->
-      </div> <!-- Fine colonna sinistra contatti -->
-      
-      <!-- COLONNA DESTRA / BLOCCO BLU (Distanziato e allineato correttamente) -->
+      </div> <!-- Fine colonna sinistra -->
+
+      <!-- COLONNA DESTRA: BLOCCO BLU MANDATI -->
       <div class="avail-box-container" style="margin-top: 40px; width: 100%;">
         <div class="avail-box" style="margin-top: 0px;">
           <div class="avail-title">Currently open to <em>new mandates</em></div>
@@ -738,8 +739,10 @@
             <div class="avail-type">Digital Transformation Project Lead</div>
             <div class="avail-type">Retail &amp; Operations Program Manager</div>
           </div>
-          <a href="mailto:obert.benedetta@gmail.com" class="avail-cta">
-            Send a Brief
+          
+          <!-- CTA BLOCCO BLU PROTETTA -->
+          <a href="#" id="secure-avail-cta" class="avail-cta">
+            Discuss a Mandate
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -748,6 +751,35 @@
     </div> <!-- Fine contact-grid -->
   </div> <!-- Fine container -->
 </section>
+
+<!-- SCRIPT UNICO DI SICUREZZA (Gestisce tutti e tre i pulsanti al click) -->
+<script>
+  (function() {
+    var u = "obert.benedetta";
+    var d = "gmail.com";
+    var p = "39";
+    var n = "3348103387";
+
+    // Pulsante Email Sinistro
+    document.getElementById('secure-email-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = "mailto:" + u + "@" + d;
+    });
+
+    // Pulsante WhatsApp Sinistro
+    document.getElementById('secure-phone-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = "https://wa.me" + p + n;
+    });
+
+    // Pulsante CTA Blocco Blu Destro
+    document.getElementById('secure-avail-cta').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = "mailto:" + u + "@" + d;
+    });
+  })();
+</script>
+<!-- FINE SEZIONE CONTACT COMPLETA E PROTETTA -->
 
 <!-- FOOTER -->
 <footer>
